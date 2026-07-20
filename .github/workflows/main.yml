@@ -23,7 +23,7 @@ jobs:
         pip install flake8
     - name: Run Linter
       run: |
-        find . -name "*.py" -exec flake8 --max-line-length=100 {} +
+        find . -name "*.py" -not -path "*/migrations/*" -exec flake8 --max-line-length=100 {} +
         echo "Linted all the python files successfully"
 
   lint_js:
